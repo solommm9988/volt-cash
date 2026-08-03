@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volt Cash · Terms & Conditions</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;850&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #07050f;
+      --card-bg: rgba(20, 15, 35, 0.75);
+      --primary: #ffc107;
+      --primary-glow: rgba(255, 193, 7, 0.25);
+      --text-main: #ffffff;
+      --text-muted: #b8b8d0;
+      --border-color: rgba(255, 193, 7, 0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.8;
+      min-height: 100vh;
+      padding: 1rem;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* خلفية ضوئية متحركة */
+    .bg-glow {
+      position: fixed;
+      width: 400px;
+      height: 400px;
+      background: var(--primary-glow);
+      filter: blur(130px);
+      border-radius: 50%;
+      z-index: -1;
+      pointer-events: none;
+    }
+    .glow-1 { top: -100px; left: -100px; }
+    .glow-2 { bottom: -100px; right: -100px; background: rgba(255, 152, 0, 0.15); }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      background: rgba(15, 10, 25, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-color);
+      border-radius: 50px;
+      padding: 10px 20px;
+      margin: 1.5rem auto 2rem;
+      max-width: 700px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 6px 16px;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover, nav a.active {
+      color: #000;
+      background: var(--primary);
+      box-shadow: 0 0 15px var(--primary-glow);
+    }
+
+    /* Header */
+    .page-header {
+      text-align: center;
+      margin: 2rem 0 2rem;
+    }
+
+    .page-header h1 {
+      font-size: 2.8rem;
+      font-weight: 850;
+      background: linear-gradient(135deg, #fff 20%, var(--primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+
+    .page-header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      background: rgba(255, 193, 7, 0.05);
+      display: inline-block;
+      padding: 6px 20px;
+      border-radius: 30px;
+      border: 1px solid var(--border-color);
+    }
+
+    /* Terms Card */
+    .terms-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid var(--border-color);
+      border-radius: 30px;
+      padding: 2rem 1.5rem;
+      max-width: 900px;
+      margin: 0 auto 3rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .terms-card h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0 0 1.2rem 0;
+      border-left: 5px solid var(--primary);
+      padding-left: 1rem;
+    }
+
+    .terms-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #ffecb3;
+      margin: 1.8rem 0 0.8rem;
+    }
+
+    .terms-card p {
+      color: #ded6f5;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .terms-card ul, .terms-card ol {
+      margin: 0.5rem 0 1.2rem 1.2rem;
+      color: #d4c8f5;
+    }
+
+    .terms-card li {
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+      list-style-type: disc;
+    }
+
+    .terms-card li::marker {
+      color: var(--primary);
+    }
+
+    .terms-card strong {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .terms-card .contact-email {
+      background: rgba(255, 193, 7, 0.08);
+      border-radius: 20px;
+      padding: 10px 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--border-color);
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+      color: #fff;
+    }
+
+    .terms-card .contact-email i {
+      color: var(--primary);
+    }
+
+    /* Summary box */
+    .summary-box {
+      margin-top: 2.5rem;
+      padding: 1.5rem;
+      background: rgba(255, 193, 7, 0.04);
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+    }
+
+    .summary-box h4 {
+      color: var(--primary);
+      font-size: 1.1rem;
+      margin-top: 0;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .summary-box ul {
+      margin-bottom: 0;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      background: rgba(7, 5, 15, 0.5);
+    }
+
+    footer i {
+      color: var(--primary);
+    }
+
+    @media (min-width: 768px) {
+      body { padding: 2rem; }
+      .terms-card { padding: 3rem 3.5rem; }
+      .page-header h1 { font-size: 3.5rem; }
+      .terms-card h2 { font-size: 1.8rem; }
+      .terms-card h3 { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-glow glow-1"></div>
+  <div class="bg-glow glow-2"></div>
+
+  <!-- navigation -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html" class="active">Terms</a>
+    <a href="delete-account.html">Delete</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="page-header">
+    <h1>Terms &amp; Conditions</h1>
+    <p>Last updated: August 3, 2026</p>
+  </div>
+
+  <div class="terms-card">
+    <h2>Volt Cash Terms &amp; Conditions</h2>
+
+    <p>
+      This document describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You. We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. (Note: these terms incorporate by reference the privacy provisions, but below are the binding contractual terms.)
+    </p>
+
+    <h3>Acceptance of Terms</h3>
+    <p>
+      By using the <strong>Volt Cash</strong> mobile app, you agree to be bound by these Terms and Conditions and all applicable laws and regulations. If you disagree with any part of these terms, you may not access the app.
+    </p>
+
+    <h3>Use of the App</h3>
+    <p>
+      Volt Cash grants you a non-transferable, non-exclusive, revocable license to use the app for your personal, non-commercial use. You may not reproduce, distribute, display, sell, lease, transmit, create derivative works from, translate, modify, reverse-engineer, disassemble, decompile or otherwise exploit the app.
+    </p>
+
+    <h3>User Accounts</h3>
+    <p>
+      To access certain features of the app, you may be required to create a user account. You are responsible for maintaining the confidentiality of your account information. You agree to provide accurate, current, and complete information during the registration process.
+    </p>
+
+    <h3>Prohibited Conduct</h3>
+    <ul>
+      <li>You may not use the app for any illegal or unauthorized purpose.</li>
+      <li>You may not engage in any activity that disrupts, damages, or interferes with the app's functionality.</li>
+      <li>No abuse, manipulation, or fraudulent behaviour (e.g., fake referrals, bots) is allowed.</li>
+      <li>Any attempt to bypass the reward system or exploit vulnerabilities is strictly forbidden.</li>
+    </ul>
+
+    <h3>Termination</h3>
+    <p>
+      Volt Cash reserves the right to terminate or suspend your account and access to the app at its sole discretion, without notice, for any reason, including violation of these terms.
+    </p>
+
+    <h3>Changes to Terms</h3>
+    <p>
+      Volt Cash reserves the right to modify or replace these Terms and Conditions at any time. The updated terms will be posted on the app. It is your responsibility to review them periodically.
+    </p>
+
+    <h3>Limitation of Liability</h3>
+    <p>
+      To the maximum extent permitted by law, in no event shall Volt Cash be liable for any indirect, punitive, incidental, special, consequential damages or any loss whatsoever arising out of or connected with your use of the app.
+    </p>
+
+    <h3>Governing Law</h3>
+    <p>
+      These Terms shall be governed and construed in accordance with the laws of <strong>Morocco</strong>, without regard to its conflict of law provisions.
+    </p>
+
+    <h3>Dispute Resolution</h3>
+    <p>
+      Any dispute arising from or relating to these terms or the app shall be resolved through good-faith negotiations. If unresolved, the dispute shall be submitted to the competent courts of Morocco.
+    </p>
+
+    <h3>Contact Information</h3>
+    <p>
+      If you have any questions about these Terms and Conditions, please contact us at:
+    </p>
+    <div class="contact-email">
+      <i class="fas fa-envelope"></i> <strong>support@voltcash.app</strong>
+    </div>
+
+    <!-- Summary box -->
+    <div class="summary-box">
+      <h4><i class="fas fa-list-ul"></i> Quick Summary</h4>
+      <ul>
+        <li>App is for personal use only</li>
+        <li>No abuse or manipulation allowed</li>
+        <li>Accounts may be suspended for violations</li>
+        <li>We may update these terms anytime</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    <i class="fas fa-scroll"></i> Volt Cash · Terms &amp; Conditions <i class="fas fa-gavel" style="margin-left: 8px;"></i>
+  </footer>
+
+</body>
+</html>

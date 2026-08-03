@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volt Cash - Play, Earn & Get Rewarded</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #07050f;
+            --card-bg: rgba(20, 15, 35, 0.7);
+            --primary: #ffc107;
+            --primary-glow: rgba(255, 193, 7, 0.3);
+            --text-main: #ffffff;
+            --text-muted: #b8b8d0;
+            --border-color: rgba(255, 193, 7, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* خلفية ضوئية متحركة */
+        .bg-glow {
+            position: fixed;
+            width: 350px;
+            height: 350px;
+            background: var(--primary-glow);
+            filter: blur(120px);
+            border-radius: 50z%;
+            z-index: -1;
+            pointer-events: none;
+        }
+        .glow-1 { top: -100px; left: -100px; }
+        .glow-2 { bottom: -100px; right: -100px; background: rgba(255, 152, 0, 0.2); }
+
+        /* الهيدر وشريط التنقل */
+        header {
+            width: 100%;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            background: rgba(7, 5, 15, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            max-width: 100%;
+            padding-bottom: 5px;
+        }
+
+        nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: #000;
+            background: var(--primary);
+            box-shadow: 0 0 15px var(--primary-glow);
+        }
+
+        /* القسم الرئيسي الهيرو */
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 30px 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .logo-container {
+            width: 110px;
+            height: 110px;
+            border-radius: 28px;
+            background: linear-gradient(135deg, #2c1e00, #140d00);
+            padding: 12px;
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 30px var(--primary-glow);
+            margin-bottom: 20px;
+            animation: pulseLogo 3s infinite alternate;
+        }
+
+        @keyframes pulseLogo {
+            0% { transform: scale(1); box-shadow: 0 0 20px var(--primary-glow); }
+            100% { transform: scale(1.05); box-shadow: 0 0 40px var(--primary); }
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 18px;
+        }
+
+        .hero-section h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            background: linear-gradient(to right, #fff, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-section p.tagline {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+        }
+
+        /* زر التحميل الفخم */
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #ffd54f, #ffc107);
+            color: #000;
+            font-weight: 800;
+            font-size: 1.05rem;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 10px 25px var(--primary-glow);
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: 100%;
+            max-width: 280px;
+            margin-bottom: 30px;
+        }
+
+        .download-btn:active {
+            transform: scale(0.96);
+        }
+
+        .download-btn i {
+            font-size: 1.4rem;
+        }
+
+        /* إحصائيات سريعة */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 12px 8px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .stat-card i {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .stat-card h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .stat-card span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* مميزات التطبيق */
+        .features-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            padding: 0 20px;
+        }
+
+        .feature-row {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            border-radius: 14px;
+            background: rgba(255, 193, 7, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .feature-info h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 2px;
+        }
+
+        .feature-info p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* الفوتر */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            background: rgba(7, 5, 15, 0.5);
+        }
+
+        footer strong {
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-glow glow-1"></div>
+    <div class="bg-glow glow-2"></div>
+
+    <!-- شريط التنقل المتجاوب -->
+    <header>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="delete-account.html">Delete Data</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="hero-section">
+        <div class="logo-container">
+            <img src="https://firebasestorage.googleapis.com/v0/b/gift-drop-73021.firebasestorage.app/o/logo.png?alt=media&token=9f794451-6ffd-4269-9ec7-b8300ccb894c" alt="Volt Cash Logo">
+        </div>
+        
+        <h1>Volt Cash</h1>
+        <p class="tagline">Play Games, Complete Tasks & Withdraw Instantly!</p>
+
+        <a href="https://play.google.com/store/apps/details?id=com.voltcash.app" class="download-btn" target="_blank">
+            <i class="fab fa-google-play"></i> Install App
+        </a>
+
+        <!-- بطاقات الإحصائيات المصممة للهواتف -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <i class="fas fa-download"></i>
+                <h4>350K+</h4>
+                <span>Downloads</span>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-star"></i>
+                <h4>4.7</h4>
+                <span>Rating</span>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-bolt"></i>
+                <h4>Instant</h4>
+                <span>Payouts</span>
+            </div>
+        </div>
+    </main>
+
+    <!-- أقسام المميزات -->
+    <section class="features-container">
+        <div class="feature-row">
+            <div class="feature-icon"><i class="fas fa-gamepad"></i></div>
+            <div class="feature-info">
+                <h3>Play & Earn</h3>
+                <p>Enjoy mini-games and daily tasks to collect rewards effortlessly.</p>
+            </div>
+        </div>
+
+        <div class="feature-row">
+            <div class="feature-icon"><i class="fas fa-wallet"></i></div>
+            <div class="feature-info">
+                <h3>Secure Cashout</h3>
+                <p>Direct server-side safe withdrawal requests with full protection.</p>
+            </div>
+        </div>
+
+        <div class="feature-row">
+            <div class="feature-icon"><i class="fas fa-user-friends"></i></div>
+            <div class="feature-info">
+                <h3>Referral System</h3>
+                <p>Invite your friends and grow your earnings together safely.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer>
+        &copy; 2026 <strong>Volt Cash</strong>. All rights reserved.
+    </footer>
+
+</body>
+</html>

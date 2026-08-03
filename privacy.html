@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volt Cash · Privacy Policy</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;850&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #07050f;
+      --card-bg: rgba(20, 15, 35, 0.75);
+      --primary: #ffc107;
+      --primary-glow: rgba(255, 193, 7, 0.25);
+      --text-main: #ffffff;
+      --text-muted: #b8b8d0;
+      --border-color: rgba(255, 193, 7, 0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.8;
+      min-height: 100vh;
+      padding: 1rem;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* خلفية ضوئية متحركة */
+    .bg-glow {
+      position: fixed;
+      width: 400px;
+      height: 400px;
+      background: var(--primary-glow);
+      filter: blur(130px);
+      border-radius: 50%;
+      z-index: -1;
+      pointer-events: none;
+    }
+    .glow-1 { top: -100px; left: -100px; }
+    .glow-2 { bottom: -100px; right: -100px; background: rgba(255, 152, 0, 0.15); }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      background: rgba(15, 10, 25, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-color);
+      border-radius: 50px;
+      padding: 10px 20px;
+      margin: 1.5rem auto 2rem;
+      max-width: 700px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 6px 16px;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover, nav a.active {
+      color: #000;
+      background: var(--primary);
+      box-shadow: 0 0 15px var(--primary-glow);
+    }
+
+    /* Header */
+    .page-header {
+      text-align: center;
+      margin: 2rem 0 2rem;
+    }
+
+    .page-header h1 {
+      font-size: 2.8rem;
+      font-weight: 850;
+      background: linear-gradient(135deg, #fff 20%, var(--primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+
+    .page-header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      background: rgba(255, 193, 7, 0.05);
+      display: inline-block;
+      padding: 6px 20px;
+      border-radius: 30px;
+      border: 1px solid var(--border-color);
+    }
+
+    /* Policy Card */
+    .policy-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid var(--border-color);
+      border-radius: 30px;
+      padding: 2rem 1.5rem;
+      max-width: 900px;
+      margin: 0 auto 3rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .policy-card h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 2.2rem 0 0.8rem;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .policy-card h2 i {
+      color: var(--primary);
+      font-size: 1.2rem;
+    }
+
+    .policy-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #ffecb3;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    .policy-card h4 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #ffe082;
+      margin: 1rem 0 0.3rem;
+    }
+
+    .policy-card p {
+      color: #ded6f5;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .policy-card ul, .policy-card ol {
+      margin: 0.5rem 0 1rem 1.2rem;
+      color: #d4c8f5;
+    }
+
+    .policy-card li {
+      margin-bottom: 0.4rem;
+      font-size: 0.95rem;
+    }
+
+    .policy-card li::marker {
+      color: var(--primary);
+    }
+
+    .policy-card strong {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    /* Contact Note */
+    .policy-card .note {
+      background: rgba(255, 193, 7, 0.08);
+      border-radius: 20px;
+      padding: 10px 20px;
+      display: inline-block;
+      margin: 0.5rem 0 1rem;
+      border: 1px solid var(--border-color);
+      color: #fff;
+    }
+
+    .policy-card .note i {
+      color: var(--primary);
+      margin-right: 8px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      background: rgba(7, 5, 15, 0.5);
+    }
+
+    footer i {
+      color: var(--primary);
+    }
+
+    /* Responsive Design */
+    @media (min-width: 768px) {
+      body { padding: 2rem; }
+      .policy-card { padding: 3rem 3.5rem; }
+      .page-header h1 { font-size: 3.5rem; }
+      .policy-card h2 { font-size: 1.7rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-glow glow-1"></div>
+  <div class="bg-glow glow-2"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="privacy.html" class="active">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="delete-account.html">Delete</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="page-header">
+    <h1>Privacy Policy</h1>
+    <p>Last updated: August 3, 2026</p>
+  </div>
+
+  <div class="policy-card">
+    <p><strong>Volt Cash</strong> ("we," "our," or "us") operates the <strong>Volt Cash</strong> mobile application (the "Service"). This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.</p>
+    
+    <p>We use your data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this policy.</p>
+
+    <h2><i class="fas fa-info-circle"></i> 1. Information Collection and Use</h2>
+    <p>We collect several different types of information for various purposes to provide and improve our Service to you.</p>
+
+    <h3>Types of Data Collected</h3>
+    
+    <h4>Personal Data</h4>
+    <p>While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you ("Personal Data"). Personally identifiable information may include, but is not limited to:</p>
+    <ul>
+      <li>Email address</li>
+      <li>First name and last name</li>
+      <li>Cookies and Usage Data</li>
+    </ul>
+
+    <h4>Usage Data</h4>
+    <p>We may also collect information that your browser sends whenever you visit our Service or when you access the Service by or through a mobile device ("Usage Data").</p>
+    <p>This Usage Data may include information such as your computer's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers and other diagnostic data.</p>
+    <p>When you access the Service with a mobile device, this Usage Data may include information such as the type of mobile device you use, your mobile device unique ID, the IP address of your mobile device, your mobile operating system, the type of mobile internet browser you use, unique device identifiers and other diagnostic data.</p>
+
+    <h2><i class="fas fa-cookie-bite"></i> 2. Tracking &amp; Cookies Data</h2>
+    <p>We use cookies and similar tracking technologies to track the activity on our Service and hold certain information.</p>
+    <p>Cookies are files with small amount of data which may include an anonymous unique identifier. Cookies are sent to your browser from a website and stored on your device. Tracking technologies also used are beacons, tags, and scripts to collect and track information and to improve and analyze our Service.</p>
+    <p>You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Service.</p>
+
+    <h2><i class="fas fa-bullseye"></i> 3. Use of Data</h2>
+    <p><strong>Volt Cash</strong> uses the collected data for various purposes:</p>
+    <ul>
+      <li>To provide and maintain the Service</li>
+      <li>To notify you about changes to our Service</li>
+      <li>To allow you to participate in interactive features of our Service when you choose to do so</li>
+      <li>To provide customer care and support</li>
+      <li>To provide analysis or valuable information so that we can improve the Service</li>
+      <li>To monitor the usage of the Service</li>
+      <li>To detect, prevent and address technical issues</li>
+    </ul>
+
+    <h2><i class="fas fa-share-alt"></i> 4. Transfer of Data</h2>
+    <p>Your information, including Personal Data, may be transferred to — and maintained on — computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from your jurisdiction.</p>
+    <p>If you are located outside Morocco and choose to provide information to us, please note that we transfer the data, including Personal Data, to Morocco and process it there.</p>
+    <p>Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.</p>
+    <p><strong>Volt Cash</strong> will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of your data and other personal information.</p>
+
+    <h2><i class="fas fa-shield-alt"></i> 5. Disclosure of Data</h2>
+    
+    <h3>Legal Requirements</h3>
+    <p><strong>Volt Cash</strong> may disclose your Personal Data in the good faith belief that such action is necessary to:</p>
+    <ul>
+      <li>To comply with a legal obligation</li>
+      <li>To protect and defend the rights or property of <strong>Volt Cash</strong></li>
+      <li>To prevent or investigate possible wrongdoing in connection with the Service</li>
+      <li>To protect the personal safety of users of the Service or the public</li>
+      <li>To protect against legal liability</li>
+    </ul>
+
+    <h2><i class="fas fa-lock"></i> 6. Security of Data</h2>
+    <p>The security of your data is important to us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.</p>
+
+    <h2><i class="fas fa-ad"></i> 7. Service Providers</h2>
+    <p>We may employ third party companies and individuals to facilitate our Service ("Service Providers"), to provide the Service on our behalf, to perform Service-related services or to assist us in analyzing how our Service is used.</p>
+    <p>These third parties have access to your Personal Data only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.</p>
+
+    <h2><i class="fas fa-link"></i> 8. Links to Other Sites</h2>
+    <p>Our Service may contain links to other sites that are not operated by us. If you click on a third party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy of every site you visit.</p>
+    <p>We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.</p>
+
+    <h2><i class="fas fa-child"></i> 9. Children's Privacy</h2>
+    <p>Our Service does not address anyone under the age of 13 ("Children").</p>
+    <p>We do not knowingly collect personally identifiable information from anyone under the age of 13. If you are a parent or guardian and you are aware that your Children has provided us with Personal Data, please contact us. If we become aware that we have collected Personal Data from children without verification of parental consent, we take steps to remove that information from our servers.</p>
+
+    <h2><i class="fas fa-sync-alt"></i> 10. Changes to This Privacy Policy</h2>
+    <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+    <p>We will let you know via email and/or a prominent notice on our Service, prior to the change becoming effective and update the "effective date" at the top of this Privacy Policy.</p>
+    <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+
+    <h2><i class="fas fa-envelope"></i> 11. Contact Us</h2>
+    <p>If you have any questions about this Privacy Policy, please contact us:</p>
+    <div class="note">
+      <i class="fas fa-envelope"></i> <strong>Email:</strong> support@voltcash.app
+    </div>
+
+  </div>
+
+  <footer>
+    <i class="fas fa-bolt"></i> Volt Cash · Your privacy matters <i class="fas fa-shield-alt" style="margin-left: 8px;"></i>
+  </footer>
+
+</body>
+</html>
