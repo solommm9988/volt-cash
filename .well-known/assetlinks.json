@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.voltcash.app",
+      "sha256_cert_fingerprints": [
+        "B2:F5:59:A7:57:AD:CB:81:1F:64:AC:8F:36:40:1F:8B:12:0F:D8:9A:D9:5E:C5:D3:83:31:B7:B8:F4:10:1C:04"
+      ]
+    }
+  }
+]
