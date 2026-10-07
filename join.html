@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join VoltCash & Earn 500 Points</title>
+  <script>
+    window.onload = function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const refCode = urlParams.get('ref') || '';
+      
+      const packageName = "com.voltcash.app";
+      // تمرير كود الدعوة رسمياً داخل Google Play Install Referrer
+      const playStoreUrl = `https://play.google.com/store/apps/details?id=${packageName}&referrer=ref%3D${encodeURIComponent(refCode)}`;
+      
+      window.location.href = playStoreUrl;
+    };
+  </script>
+  <style>
+    body {
+      background-color: #090C12;
+      color: #FFB800;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .spinner {
+      width: 44px;
+      height: 44px;
+      border: 3.5px solid rgba(255, 184, 0, 0.2);
+      border-top-color: #FFB800;
+      border-radius: 50%;
+      animation: spin 0.9s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    p {
+      margin-top: 18px;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="spinner"></div>
+  <p>⚡ Redirecting to VoltCash on Google Play...</p>
+</body>
+</html>
