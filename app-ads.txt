@@ -1,1 +1,9 @@
+# Google AdMob
 google.com, pub-7062393309309951, DIRECT, f08c47fec0942fa0
+
+# ironSource
+ironsource.com, 2895abfc5, DIRECT, e08544f884a480a4
+
+# Unity Ads
+unityads.unitychina.cn, 6105669, DIRECT
+unityads.com, 6105669, DIRECT
